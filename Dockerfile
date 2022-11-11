@@ -29,9 +29,7 @@ RUN mkdir -p ${ANDROID_HOME}/cmdline-tools && \
 	unzip -q /tmp/cmdline-tools.zip -d ${ANDROID_HOME}/cmdline-tools && \
 	rm /tmp/cmdline-tools.zip && \
 	mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest && \
-
 	# Use sdkmanager to install further tools
-
 	echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "build-tools;${ANDROID_PLATFORM_VERSION}.0.0" && \       
 	echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "platforms;android-${ANDROID_PLATFORM_VERSION}" && \
 	echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "ndk;${NDK_LTS_VERSION}"
@@ -56,10 +54,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	rm -rf /var/lib/apt/lists/* && \
 	curl -sSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar -xz -C /usr/local/ && \
 	mkdir -p $GOPATH/bin && \
-
 	# Install and setup gomobile now
 	# This is not from CircleCI
-
 	go install "golang.org/x/mobile/cmd/gomobile@${GOMOBILE_COMMIT}" && \
 	gomobile init && \
 	mkdir /module
