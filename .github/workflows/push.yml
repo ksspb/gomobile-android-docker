@@ -22,4 +22,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ksspb/gomobile-android:latest
+          tags: |
+            ksspb/gomobile-android:latest

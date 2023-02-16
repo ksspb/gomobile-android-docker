@@ -1,6 +1,6 @@
 FROM openjdk:11-jdk-bullseye
 
-ENV GO_VERSION 1.18.6
+ENV GO_VERSION 1.19.6
 ENV GOMOBILE_COMMIT 447654d
 ENV NDK_LTS_VERSION 23.1.7779620
 ENV SDK_TOOLS_VERSION 8092744
@@ -63,4 +63,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 VOLUME "/module"
 WORKDIR "/module"
 
-ENTRYPOINT ["gomobile"]
+# ENTRYPOINT ["gomobile"]
